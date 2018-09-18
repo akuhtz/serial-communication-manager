@@ -2362,7 +2362,8 @@ static int __init sp_tty2com_init(void)
 
     spvtty_driver->owner = THIS_MODULE;
     spvtty_driver->driver_name = "tty2com";
-    spvtty_driver->name = "tty2com";
+    // spvtty_driver->name = "tty2com";
+    spvtty_driver->name = "tty2bidib";
     spvtty_driver->major = 0;
     spvtty_driver->minor_start = minor_begin;
     spvtty_driver->type = TTY_DRIVER_TYPE_SERIAL;
