@@ -2269,12 +2269,21 @@ static int sp_vcard_proc_close(struct inode *inode, struct file *file)
 	return 0;
 }
 
+/**
 static const struct file_operations sp_vcard_proc_fops = {
 	.owner   = THIS_MODULE,
 	.open    = sp_vcard_proc_open,
 	.read    = sp_vcard_proc_read,
 	.write   = sp_vcard_proc_write,
 	.release = sp_vcard_proc_close,
+};
+*/
+
+static const struct proc_ops sp_vcard_proc_fops = {
+ 	.proc_open	= sp_vcard_proc_open,
+ 	.proc_read	= sp_vcard_proc_read,
+ 	.proc_write	= sp_vcard_proc_write,
+	.proc_release   = sp_vcard_proc_close,
 };
 
 static const struct tty_operations sp_serial_ops = {
